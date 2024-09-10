@@ -3,10 +3,37 @@
 # Lab 1
 # Problem 1
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
-
+my_list = [1, 5, 'apple', 20.5]
 # Problem 2
 # Put your solution here, make sure I can run it by running this file. Do not submit it commented out.
+print(my_list[2])
+# Problem 3
+my_list.append(10)
+print(my_list)
+# Problem 4
+my_list.remove(20.5) 
+print(my_list)
+# Problem 5
+my_list.reverse()
+print(my_list)
 
+# Lab 2
+# Problem 1
+person = '{'
+'name': 'John'
+'age': 30,
+'job': 'teacher'
+# Problem 2
+print(person['job'])
+# Problem 3
+person['city'] = "Paris"
+print(person)
+# Problem 4
+del person['age']
+print(person)
+# Problem 5
+for key, value in person.items():
+    print(f'{key}: {value}')
 # -----------------------------------------------------------------------------
 
 
@@ -33,8 +60,15 @@ def count_vowels(s: str) -> int:
     Returns:
     - int: The number of vowels in the string
     """
+    vowels: list = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    vowel_count: int = 0
+    for letter in s:
+        if letter in vowels:
+            vowel_count += 1
+    return vowel_count
+
     # TODO: Implement this function
-    pass
+
 
 
 # Unit Tests for count_vowels
@@ -63,6 +97,29 @@ def merge_lists(list1: list, list2: list) -> list:
     Returns:
     - list: A new sorted list containing all elements from list1 and list2
     """
+    # for loop
+    merged_list = []
+    how_many_times = len(list1) + len(list2) 
+    index1 = 0
+    index2 = 0
+    while len(merged_list) != how_many_times:
+        if list1 == []:
+             return add_remaining_items_to_merged_list(index2, list2, merged_list) # type: ignore
+        if list2 == []:
+            return add_remaining_items_to_merged_list(index2, list1, merged_list)
+        if list1[index] < list2[index2]:
+            merged_list.append(list1[index1])2
+            if index1+1 == len(list1):
+                return add_remaining_items_to_merged_list(index2, list2, merged_list) # type: ignore
+            else:
+                index1 += 1
+        else:
+            merged_list.append(list2[index2])
+            if index2 + 1 == len(list2):
+                return add_remaining_items_to_merged_list(index1, list, merged_list)
+            else:
+                index2 += 1
+    return merged_list
     # TODO: Implement this function
     pass
 
@@ -94,6 +151,18 @@ def word_lengths(words: list) -> list:
     Returns:
     - list: A list containing the lengths of the words
     """
+    def word_lengths(words: list) -> list:
+    """
+        Get the lengths of words in a list.
+        Parameters:
+        words (list): The list of words
+        Returns:
+        - list: A list containing the lengths of the words
+    """
+    lengths = []
+    for word in words:
+        lengths.append(len(word))
+    return lengths
     # TODO: Implement this function
     pass
 
@@ -121,6 +190,8 @@ def reverse_string(s: str) -> str:
     Returns:
     - str: The reversed string
     """
+    def reverse_string(s: str) -> str:
+        return s[::-1]
     # TODO: Implement this function
     pass
 
@@ -150,9 +221,22 @@ def intersection(list1: list, list2: list) -> list:
     Returns:
     - list: The intersection of the two lists
     """
+    # step 0: create an intersection list
+    intersection_list = []
+    # step 1: pick a list
+    # step 2: iterate over the list 
+    for number in list1:
+        # step 3 : for each item check if it is in the other list
+        if number in list2: 
+        # step 4: if it is add it into the other intersection list, oh wait, we need that, let's add a step 0
+            intersection_list.append(number)
+    intersection_list = list(set(intersection_list))
+    return intersection_list
+# step 5: retunr the intersection list 
+# step 6: how did we remove duplicates?
+    
     # TODO: Implement this function
-    pass
-
+    pass 
 
 # Unit Tests for intersection
 def test_intersection():
