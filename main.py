@@ -19,10 +19,10 @@ print(my_list)
 
 # Lab 2
 # Problem 1
-person = '{'
-'name': 'John'
+person = {
+'name': 'John',
 'age': 30,
-'job': 'teacher'
+'job': 'teacher'}
 # Problem 2
 print(person['job'])
 # Problem 3
@@ -102,24 +102,29 @@ def merge_lists(list1: list, list2: list) -> list:
     how_many_times = len(list1) + len(list2) 
     index1 = 0
     index2 = 0
-    while len(merged_list) != how_many_times:
-        if list1 == []:
-             return add_remaining_items_to_merged_list(index2, list2, merged_list) # type: ignore
-        if list2 == []:
-            return add_remaining_items_to_merged_list(index2, list1, merged_list)
-        if list1[index] < list2[index2]:
-            merged_list.append(list1[index1])2
-            if index1+1 == len(list1):
-                return add_remaining_items_to_merged_list(index2, list2, merged_list) # type: ignore
-            else:
-                index1 += 1
-        else:
-            merged_list.append(list2[index2])
-            if index2 + 1 == len(list2):
-                return add_remaining_items_to_merged_list(index1, list, merged_list)
-            else:
-                index2 += 1
-    return merged_list
+    """""
+    hey prof I couldn't get the damn code to work
+    
+    """
+    # while len(merged_list) != how_many_times:
+    #     if list1 == []:
+    #          return add_remaining_items_to_merged_list(index2, list2, merged_list) # type: ignore
+    #     if list2 == []:
+    #         return add_remaining_items_to_merged_list(index2, list1, merged_list)
+    #     if list1[index] < list2[index2]:
+    #         merged_list.append(list1[index1])2
+    #         if index1+1 == len(list1):
+    #             return add_remaining_items_to_merged_list(index2, list2, merged_list) # type: ignore
+    #         else:
+    #             index1 += 1
+    #     else:
+    #         merged_list.append(list2[index2])
+    #         if index2 + 1 == len(list2):
+    #             return add_remaining_items_to_merged_list(index1, list, merged_list)
+    #         else:
+    #             index2 += 1
+    # return merged_list
+    pass
     # TODO: Implement this function
     pass
 
@@ -151,20 +156,11 @@ def word_lengths(words: list) -> list:
     Returns:
     - list: A list containing the lengths of the words
     """
-    def word_lengths(words: list) -> list:
-    """
-        Get the lengths of words in a list.
-        Parameters:
-        words (list): The list of words
-        Returns:
-        - list: A list containing the lengths of the words
-    """
     lengths = []
     for word in words:
         lengths.append(len(word))
     return lengths
-    # TODO: Implement this function
-    pass
+    # # TODO: Implement this function
 
 
 # Unit Tests for word_lengths
