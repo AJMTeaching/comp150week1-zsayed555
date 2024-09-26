@@ -20,10 +20,16 @@ print(my_list)
 # Lab 2
 # Problem 1
 person = {
+<<<<<<< HEAD
      'name': 'John',
      'age': 30,
      'job': 'teacher'
 }
+=======
+'name': 'John',
+'age': 30,
+'job': 'teacher'}
+>>>>>>> 8e84018c63f422e5760c7e2420079f4dc982619e
 # Problem 2
 print(person['job'])
 # Problem 3
@@ -100,6 +106,7 @@ def merge_lists(list1: list, list2: list) -> list:
     merged_list = [0]*how_many_times
     index1 = 0
     index2 = 0
+<<<<<<< HEAD
     while len(merged_list) != how_many_times:
         if list1 == []:
             for n in list2 : merged_list.append(n)
@@ -114,6 +121,31 @@ def merge_lists(list1: list, list2: list) -> list:
             index2 += 1
     print(merged_list)
     return merged_list
+=======
+    """""
+    hey prof I couldn't get the damn code to work
+    
+    """
+    # while len(merged_list) != how_many_times:
+    #     if list1 == []:
+    #          return add_remaining_items_to_merged_list(index2, list2, merged_list) # type: ignore
+    #     if list2 == []:
+    #         return add_remaining_items_to_merged_list(index2, list1, merged_list)
+    #     if list1[index] < list2[index2]:
+    #         merged_list.append(list1[index1])2
+    #         if index1+1 == len(list1):
+    #             return add_remaining_items_to_merged_list(index2, list2, merged_list) # type: ignore
+    #         else:
+    #             index1 += 1
+    #     else:
+    #         merged_list.append(list2[index2])
+    #         if index2 + 1 == len(list2):
+    #             return add_remaining_items_to_merged_list(index1, list, merged_list)
+    #         else:
+    #             index2 += 1
+    # return merged_list
+    pass
+>>>>>>> 8e84018c63f422e5760c7e2420079f4dc982619e
     # TODO: Implement this function
     pass
 
@@ -145,12 +177,20 @@ def word_lengths(words: list) -> list:
     Returns:
     - list: A list containing the lengths of the words
     """
+<<<<<<< HEAD
  
     return [len(word) for word in words]
     
     # TODO: Implement this function
       
     pass
+=======
+    lengths = []
+    for word in words:
+        lengths.append(len(word))
+    return lengths
+    # # TODO: Implement this function
+>>>>>>> 8e84018c63f422e5760c7e2420079f4dc982619e
 
 
 # Unit Tests for word_lengths
